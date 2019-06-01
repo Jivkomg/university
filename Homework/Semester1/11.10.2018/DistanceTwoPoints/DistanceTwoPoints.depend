@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1540546690 source:/Users/zhivkogeorgiev/Documents/C++/Homework/11.10.2018/DistanceTwoPoints/main.cpp
+	<iostream>
+	<math.h>
+	<iomanip>
+	<cstdio>
+

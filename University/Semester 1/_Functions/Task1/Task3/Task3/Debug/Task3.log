@@ -1,0 +1,2 @@
+﻿  Task3.cpp
+c:\users\grade\source\repos\up-se-2018\task1\task3\task3\task3.cpp(22): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1540483240 source:/Users/zhivkogeorgiev/Documents/C++/Homework/QuadraticSolver/main.cpp
+	<iostream>
+	<math.h>
+

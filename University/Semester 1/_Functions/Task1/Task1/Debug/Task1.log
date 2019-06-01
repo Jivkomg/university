@@ -1,0 +1,2 @@
+﻿Task1.obj : error LNK2019: unresolved external symbol "void __cdecl print10(void)" (?print10@@YAXXZ) referenced in function _main
+C:\Users\grade\source\repos\UP-SE-2018\Task1\Debug\Task1.exe : fatal error LNK1120: 1 unresolved externals
