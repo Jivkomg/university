@@ -10,9 +10,9 @@
 #include "File.h"
 
 File::File() { 
-    name = '\0';
-    extension = '\0';
-    dateCreated = '\0';
+    name = "New file";
+    extension = "";
+    dateCreated = "18-30-10::04-06-2019";
     size = 0;
     insideNumber = 0;
     information.push_back('\0');

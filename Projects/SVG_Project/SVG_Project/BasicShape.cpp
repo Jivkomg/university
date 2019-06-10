@@ -7,6 +7,25 @@
 //
 
 #include "BasicShape.h"
-BasicShape::BasicShape() { 
-    fill = "";
+
+BasicShape::BasicShape():fill("white"), strokeWidth(0)  {
+}
+
+BasicShape::BasicShape(std::string fill, int strokeWidth): fill(fill), strokeWidth(strokeWidth) {
+}
+
+const std::string BasicShape::getFill() const { 
+    return fill;
+}
+
+const int BasicShape::getStrokeWidth() const { 
+    return strokeWidth;
+}
+
+void BasicShape::setFill(const std::string& fill) {
+    this->fill = fill;
+}
+
+void BasicShape::setStrokeWidth(const int& strokeWidth) {
+    this->strokeWidth = strokeWidth;
 }

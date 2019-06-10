@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		142A2D1022A4042B005BA6B4 /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 142A2D0F22A4042B005BA6B4 /* Line.cpp */; };
-		142A2D1322A40C46005BA6B4 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 142A2D1222A40C46005BA6B4 /* Rectangle.cpp */; };
-		14706237229E92A90004906E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14706236229E92A90004906E /* main.cpp */; };
-		1470623F229E92D10004906E /* BasicShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1470623E229E92D10004906E /* BasicShape.cpp */; };
-		14D96C1122A68EE0004AC914 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D96C1022A68EE0004AC914 /* Circle.cpp */; };
+		14065E1722ABCD2200CEE09D /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14065E1622ABCD2200CEE09D /* Player.cpp */; };
+		14065E1A22ABCEAE00CEE09D /* NPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14065E1922ABCEAE00CEE09D /* NPC.cpp */; };
+		14065E1D22ABCEFE00CEE09D /* Mob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14065E1C22ABCEFE00CEE09D /* Mob.cpp */; };
+		140AFE2022AD75A800822847 /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 140AFE1F22AD75A800822847 /* Environment.cpp */; };
+		14D96C0122A685C5004AC914 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D96C0022A685C5004AC914 /* main.cpp */; };
+		14D96C0922A68658004AC914 /* Point2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D96C0822A68658004AC914 /* Point2D.cpp */; };
+		14D96C0B22A6875C004AC914 /* Point3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D96C0A22A6875C004AC914 /* Point3D.cpp */; };
+		14D96C0F22A68C29004AC914 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D96C0E22A68C29004AC914 /* Entity.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		14706231229E92A90004906E /* CopyFiles */ = {
+		14D96BFB22A685C5004AC914 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -27,21 +30,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		142A2D0F22A4042B005BA6B4 /* Line.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
-		142A2D1122A408DB005BA6B4 /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
-		142A2D1222A40C46005BA6B4 /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
-		142A2D1422A40FF4005BA6B4 /* Circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
-		14706233229E92A90004906E /* SVG_Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SVG_Project; sourceTree = BUILT_PRODUCTS_DIR; };
-		14706236229E92A90004906E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		1470623D229E92C20004906E /* BasicShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicShape.h; sourceTree = "<group>"; };
-		1470623E229E92D10004906E /* BasicShape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicShape.cpp; sourceTree = "<group>"; };
-		14706244229E96370004906E /* Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
-		14D96C1022A68EE0004AC914 /* Circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
-		14D96C1222A6E20D004AC914 /* UserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInterface.h; sourceTree = "<group>"; };
+		14065E1522ABCC2800CEE09D /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		14065E1622ABCD2200CEE09D /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		14065E1822ABCE8A00CEE09D /* NPC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPC.h; sourceTree = "<group>"; };
+		14065E1922ABCEAE00CEE09D /* NPC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NPC.cpp; sourceTree = "<group>"; };
+		14065E1B22ABCEC900CEE09D /* Mob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mob.h; sourceTree = "<group>"; };
+		14065E1C22ABCEFE00CEE09D /* Mob.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mob.cpp; sourceTree = "<group>"; };
+		14065E1E22ABCF1300CEE09D /* Environment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
+		140AFE1F22AD75A800822847 /* Environment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
+		14D96BFD22A685C5004AC914 /* EntitySystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EntitySystem; sourceTree = BUILT_PRODUCTS_DIR; };
+		14D96C0022A685C5004AC914 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		14D96C0722A685ED004AC914 /* Point2D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Point2D.h; sourceTree = "<group>"; };
+		14D96C0822A68658004AC914 /* Point2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Point2D.cpp; sourceTree = "<group>"; };
+		14D96C0A22A6875C004AC914 /* Point3D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Point3D.cpp; sourceTree = "<group>"; };
+		14D96C0C22A6876A004AC914 /* Point3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Point3D.h; sourceTree = "<group>"; };
+		14D96C0D22A68960004AC914 /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		14D96C0E22A68C29004AC914 /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		14706230229E92A90004906E /* Frameworks */ = {
+		14D96BFA22A685C5004AC914 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,107 +59,115 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1470622A229E92A90004906E = {
+		14D96BF422A685C5004AC914 = {
 			isa = PBXGroup;
 			children = (
-				14706235229E92A90004906E /* SVG_Project */,
-				14706234229E92A90004906E /* Products */,
+				14D96BFF22A685C5004AC914 /* EntitySystem */,
+				14D96BFE22A685C5004AC914 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		14706234229E92A90004906E /* Products */ = {
+		14D96BFE22A685C5004AC914 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				14706233229E92A90004906E /* SVG_Project */,
+				14D96BFD22A685C5004AC914 /* EntitySystem */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		14706235229E92A90004906E /* SVG_Project */ = {
+		14D96BFF22A685C5004AC914 /* EntitySystem */ = {
 			isa = PBXGroup;
 			children = (
-				14706236229E92A90004906E /* main.cpp */,
-				1470623D229E92C20004906E /* BasicShape.h */,
-				1470623E229E92D10004906E /* BasicShape.cpp */,
-				14706244229E96370004906E /* Line.h */,
-				142A2D0F22A4042B005BA6B4 /* Line.cpp */,
-				142A2D1122A408DB005BA6B4 /* Rectangle.h */,
-				142A2D1222A40C46005BA6B4 /* Rectangle.cpp */,
-				142A2D1422A40FF4005BA6B4 /* Circle.h */,
-				14D96C1022A68EE0004AC914 /* Circle.cpp */,
-				14D96C1222A6E20D004AC914 /* UserInterface.h */,
+				14D96C0022A685C5004AC914 /* main.cpp */,
+				14D96C0722A685ED004AC914 /* Point2D.h */,
+				14D96C0822A68658004AC914 /* Point2D.cpp */,
+				14D96C0C22A6876A004AC914 /* Point3D.h */,
+				14D96C0A22A6875C004AC914 /* Point3D.cpp */,
+				14D96C0D22A68960004AC914 /* Entity.h */,
+				14D96C0E22A68C29004AC914 /* Entity.cpp */,
+				14065E1522ABCC2800CEE09D /* Player.h */,
+				14065E1622ABCD2200CEE09D /* Player.cpp */,
+				14065E1822ABCE8A00CEE09D /* NPC.h */,
+				14065E1922ABCEAE00CEE09D /* NPC.cpp */,
+				14065E1B22ABCEC900CEE09D /* Mob.h */,
+				14065E1C22ABCEFE00CEE09D /* Mob.cpp */,
+				14065E1E22ABCF1300CEE09D /* Environment.h */,
+				140AFE1F22AD75A800822847 /* Environment.cpp */,
 			);
-			path = SVG_Project;
+			path = EntitySystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		14706232229E92A90004906E /* SVG_Project */ = {
+		14D96BFC22A685C5004AC914 /* EntitySystem */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1470623A229E92A90004906E /* Build configuration list for PBXNativeTarget "SVG_Project" */;
+			buildConfigurationList = 14D96C0422A685C5004AC914 /* Build configuration list for PBXNativeTarget "EntitySystem" */;
 			buildPhases = (
-				1470622F229E92A90004906E /* Sources */,
-				14706230229E92A90004906E /* Frameworks */,
-				14706231229E92A90004906E /* CopyFiles */,
+				14D96BF922A685C5004AC914 /* Sources */,
+				14D96BFA22A685C5004AC914 /* Frameworks */,
+				14D96BFB22A685C5004AC914 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SVG_Project;
-			productName = SVG_Project;
-			productReference = 14706233229E92A90004906E /* SVG_Project */;
+			name = EntitySystem;
+			productName = EntitySystem;
+			productReference = 14D96BFD22A685C5004AC914 /* EntitySystem */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1470622B229E92A90004906E /* Project object */ = {
+		14D96BF522A685C5004AC914 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Zhivko Georgiev";
 				TargetAttributes = {
-					14706232229E92A90004906E = {
+					14D96BFC22A685C5004AC914 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = 1470622E229E92A90004906E /* Build configuration list for PBXProject "SVG_Project" */;
+			buildConfigurationList = 14D96BF822A685C5004AC914 /* Build configuration list for PBXProject "EntitySystem" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1470622A229E92A90004906E;
-			productRefGroup = 14706234229E92A90004906E /* Products */;
+			mainGroup = 14D96BF422A685C5004AC914;
+			productRefGroup = 14D96BFE22A685C5004AC914 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				14706232229E92A90004906E /* SVG_Project */,
+				14D96BFC22A685C5004AC914 /* EntitySystem */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1470622F229E92A90004906E /* Sources */ = {
+		14D96BF922A685C5004AC914 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				142A2D1022A4042B005BA6B4 /* Line.cpp in Sources */,
-				14D96C1122A68EE0004AC914 /* Circle.cpp in Sources */,
-				1470623F229E92D10004906E /* BasicShape.cpp in Sources */,
-				14706237229E92A90004906E /* main.cpp in Sources */,
-				142A2D1322A40C46005BA6B4 /* Rectangle.cpp in Sources */,
+				14D96C0F22A68C29004AC914 /* Entity.cpp in Sources */,
+				14D96C0922A68658004AC914 /* Point2D.cpp in Sources */,
+				14D96C0122A685C5004AC914 /* main.cpp in Sources */,
+				14065E1A22ABCEAE00CEE09D /* NPC.cpp in Sources */,
+				14D96C0B22A6875C004AC914 /* Point3D.cpp in Sources */,
+				140AFE2022AD75A800822847 /* Environment.cpp in Sources */,
+				14065E1D22ABCEFE00CEE09D /* Mob.cpp in Sources */,
+				14065E1722ABCD2200CEE09D /* Player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		14706238229E92A90004906E /* Debug */ = {
+		14D96C0222A685C5004AC914 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -210,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		14706239229E92A90004906E /* Release */ = {
+		14D96C0322A685C5004AC914 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,7 +278,7 @@
 			};
 			name = Release;
 		};
-		1470623B229E92A90004906E /* Debug */ = {
+		14D96C0522A685C5004AC914 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -270,7 +286,7 @@
 			};
 			name = Debug;
 		};
-		1470623C229E92A90004906E /* Release */ = {
+		14D96C0622A685C5004AC914 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -281,25 +297,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1470622E229E92A90004906E /* Build configuration list for PBXProject "SVG_Project" */ = {
+		14D96BF822A685C5004AC914 /* Build configuration list for PBXProject "EntitySystem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14706238229E92A90004906E /* Debug */,
-				14706239229E92A90004906E /* Release */,
+				14D96C0222A685C5004AC914 /* Debug */,
+				14D96C0322A685C5004AC914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1470623A229E92A90004906E /* Build configuration list for PBXNativeTarget "SVG_Project" */ = {
+		14D96C0422A685C5004AC914 /* Build configuration list for PBXNativeTarget "EntitySystem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1470623B229E92A90004906E /* Debug */,
-				1470623C229E92A90004906E /* Release */,
+				14D96C0522A685C5004AC914 /* Debug */,
+				14D96C0622A685C5004AC914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1470622B229E92A90004906E /* Project object */;
+	rootObject = 14D96BF522A685C5004AC914 /* Project object */;
 }

@@ -7,15 +7,6 @@
 //
 
 #include <iostream>
-#include "MyString.h"
-int main(int argc, const char * argv[]) {
-    MyString str;
-    str = "bla";
-    MyString str1 = "lmao";
-    MyString str2 = str.concatenate(str1);
-    std::cout << str2.indexOf('l');
-    std::cout << str2;
-    std::cin >> str;
-    std::cout << str;
+int main() {
     return 0;
 }
