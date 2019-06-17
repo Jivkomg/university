@@ -11,16 +11,19 @@
 #include "BasicShape.h"
 class Circle: public BasicShape{
 protected:
-    Point p;
+    Point centre;
     int radius;
 public:
     Circle();
     Circle(const Point&, const int&, const std::string& fill, const int& strokeWidth);
     
-    const Point getPoint() const;
+    const Point getCentre() const;
     const int getRadius() const;
-    void setPoint(const Point&);
+    void setCentre(const Point&);
     void setRadius(const int&);
+    const std::string getType() const override;
+    void print() const override;
+
 };
 
 #endif /* Circle_h */

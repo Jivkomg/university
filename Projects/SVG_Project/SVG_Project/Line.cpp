@@ -8,6 +8,7 @@
 
 #include "Line.h"
 
+
 Line::Line(): p1(0,0), p2(0,0), BasicShape() {
 }
 
@@ -32,11 +33,6 @@ void Line::setPoint2(const Point& p2) {
     this->p2.y = p2.y;
 }
 
-//void Line::setWidth(int width) {
-//    this->width = width;
-//}
-
-
 const Point Line::getPoint1() const {
     return this->p1;
 }
@@ -45,7 +41,11 @@ const Point Line::getPoint2() const {
     return this->p2;
 }
 
-//const int Line::getWidth() const { 
-//    return width;
-//}
+const std::string Line::getType() const {
+    return "line";
+}
 
+void Line::print() const { 
+    std::cout << this->getType() << " "<< p1.x << " " << p1.y << " "
+        << p2.x << " " << p2.y << this->getFill();
+}

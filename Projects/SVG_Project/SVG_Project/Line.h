@@ -14,7 +14,6 @@ class Line: public BasicShape{
 private:
     Point p1;
     Point p2;
-//    int width;
 public:
     Line();
     Line(const Point&, const Point&, const std::string&, const int&);
@@ -22,11 +21,11 @@ public:
   
     void setPoint1(const Point&);
     void setPoint2(const Point&);
-//    void setWidth(int);
     
     const Point getPoint1() const;
     const Point getPoint2() const;
-//    const int getWidth() const;
+    const std::string getType() const override;
+    void print() const override;
 };
 
 #endif /* Line_h */

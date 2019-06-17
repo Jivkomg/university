@@ -10,6 +10,7 @@
 #define BasicShape_h
 #include "math.h"
 #include <string>
+#include <iostream>
 struct Point{
     int x;
     int y;
@@ -25,7 +26,7 @@ struct Point{
 };
 class BasicShape{
 protected:
-    std::string fill;
+    std::string fillColour;
     int strokeWidth;
     //point
 public:
@@ -37,6 +38,10 @@ public:
     void setFill(const std::string&);
     void setStrokeWidth(const int&);
     virtual void translate(const int&, const int&) = 0;
+    virtual const std::string getType() const = 0;
+    virtual void print() const = 0;
+    
+    
 };
 
 #endif /* BasicShape_h */

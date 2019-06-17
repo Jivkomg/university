@@ -11,7 +11,7 @@
 #include "BasicShape.h"
 class Rectangle: public BasicShape{
 private:
-    Point p;
+    Point leftMostPoint;
     int width;
     int height;
 public:
@@ -21,10 +21,13 @@ public:
     
     void setWidth(const int&);
     void setHeight(const int&);
-    void setPoint(const Point&);
+    void setLeftMostPoint(const Point&);
     const int getWidth() const;
     const int getHeight() const;
-    const Point getPoint() const;
-};
+    const Point getLeftMostPoint() const;
+    
+    const std::string getType() const override;
+    void print() const override;
 
+};
 #endif /* Rectangle_h */

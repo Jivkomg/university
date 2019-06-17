@@ -8,14 +8,14 @@
 
 #include "BasicShape.h"
 
-BasicShape::BasicShape():fill("white"), strokeWidth(0)  {
+BasicShape::BasicShape():fillColour("white"), strokeWidth(0)  {
 }
 
-BasicShape::BasicShape(std::string fill, int strokeWidth): fill(fill), strokeWidth(strokeWidth) {
+BasicShape::BasicShape(std::string fill, int strokeWidth): fillColour(fill), strokeWidth(strokeWidth) {
 }
 
 const std::string BasicShape::getFill() const { 
-    return fill;
+    return fillColour;
 }
 
 const int BasicShape::getStrokeWidth() const { 
@@ -23,9 +23,11 @@ const int BasicShape::getStrokeWidth() const {
 }
 
 void BasicShape::setFill(const std::string& fill) {
-    this->fill = fill;
+    this->fillColour = fill;
 }
 
 void BasicShape::setStrokeWidth(const int& strokeWidth) {
     this->strokeWidth = strokeWidth;
 }
+
+

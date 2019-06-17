@@ -8,15 +8,22 @@
 
 #ifndef UserInterface_h
 #define UserInterface_h
-#include <string>
-class UserInterface(){
-public:
+#include <vector>
+#include "BasicShape.h"
+class UserInterface{
+private:
+    std::vector<BasicShape*> shapes;
     void close();
     void save();
     void saveAs(const std::string&);
     void exit();
     void open(const std::string&);
-    void clear();
+//    void clear();
+    
+    void create(const std::vector<std::string>&);
+    void erase(const int&);
     void print() const;
-}
+    void within(const std::vector<std::string>&);
+    void translate(const std::vector<std::string>&);
+};
 #endif /* UserInterface_h */
