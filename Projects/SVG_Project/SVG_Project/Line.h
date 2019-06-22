@@ -17,6 +17,7 @@ private:
 public:
     Line();
     Line(const Point&, const Point&, const std::string&, const int&);
+    
     void translate(const int&, const int&) override;
   
     void setPoint1(const Point&);
@@ -24,8 +25,18 @@ public:
     
     const Point getPoint1() const;
     const Point getPoint2() const;
+    
+    void deserializeWithParameters(const std::string&, const std::string&) override;
+    void serialize(std::ostream&) const override;
+
     const std::string getType() const override;
     void print() const override;
+    
+    const Point getLeft() const override;
+    const Point getRight() const override;
+    const Point getTop() const override;
+    const Point getBottom() const override;
+
 };
 
 #endif /* Line_h */

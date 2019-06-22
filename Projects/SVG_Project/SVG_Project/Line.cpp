@@ -41,6 +41,39 @@ const Point Line::getPoint2() const {
     return this->p2;
 }
 
+void Line::deserializeWithParameters(const std::string& name, const std::string& value) {
+    if (name == "x1")
+    {
+        p1.x = std::atoi(value.c_str());
+    }
+    else if (name == "y1")
+    {
+        p1.y = std::atoi(value.c_str());
+    }
+    else if (name == "x2")
+    {
+        p2.x = std::atoi(value.c_str());
+    }
+    else if (name == "y2")
+    {
+        p2.y = std::atoi(value.c_str());
+    }
+    else if (name == "stroke-width")
+    {
+        
+        this->setStrokeWidth(std::atoi(value.c_str()));
+    }
+}
+void Line::serialize(std::ostream& os) const {
+    this->startSerialize(os);
+    this->serializeWithParameters(os, "x1", std::to_string(p1.x));
+    this->serializeWithParameters(os, "y1", std::to_string(p1.y));
+    this->serializeWithParameters(os, "x2", std::to_string(p2.x));
+    this->serializeWithParameters(os, "y2", std::to_string(p2.y));
+    this->serializeWithParameters(os, "stroke-width", std::to_string(strokeWidth));
+    this->endSerialize(os);
+}
+
 const std::string Line::getType() const {
     return "line";
 }
@@ -49,3 +82,20 @@ void Line::print() const {
     std::cout << this->getType() << " "<< p1.x << " " << p1.y << " "
         << p2.x << " " << p2.y << this->getFill();
 }
+
+const Point Line::getLeft() const { 
+    return p1;
+}
+
+const Point Line::getRight() const { 
+    return p2;
+}
+
+const Point Line::getTop() const { 
+    return p1;
+}
+
+const Point Line::getBottom() const { 
+    return p2;
+}
+
