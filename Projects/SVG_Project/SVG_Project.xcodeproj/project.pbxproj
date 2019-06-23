@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		142A2D1022A4042B005BA6B4 /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 142A2D0F22A4042B005BA6B4 /* Line.cpp */; };
 		142A2D1322A40C46005BA6B4 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 142A2D1222A40C46005BA6B4 /* Rectangle.cpp */; };
-		1465B3CF22BCF1BD0090A084 /* XMLParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1465B3CE22BCF1BD0090A084 /* XMLParser.cpp */; };
 		14706237229E92A90004906E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14706236229E92A90004906E /* main.cpp */; };
 		1470623F229E92D10004906E /* BasicShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1470623E229E92D10004906E /* BasicShape.cpp */; };
 		14CC7C5222B79FC000DE2B8F /* UserInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CC7C5122B79FC000DE2B8F /* UserInterface.cpp */; };
-		14CC7C5522B7B25E00DE2B8F /* ShapeCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CC7C5422B7B25E00DE2B8F /* ShapeCreator.cpp */; };
 		14D96C1122A68EE0004AC914 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D96C1022A68EE0004AC914 /* Circle.cpp */; };
 /* End PBXBuildFile section */
 
@@ -38,16 +36,12 @@
 		142A2D1122A408DB005BA6B4 /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
 		142A2D1222A40C46005BA6B4 /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		142A2D1422A40FF4005BA6B4 /* Circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
-		1465B3CD22BCEEB10090A084 /* XMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
-		1465B3CE22BCF1BD0090A084 /* XMLParser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XMLParser.cpp; sourceTree = "<group>"; };
 		14706233229E92A90004906E /* SVG_Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SVG_Project; sourceTree = BUILT_PRODUCTS_DIR; };
 		14706236229E92A90004906E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1470623D229E92C20004906E /* BasicShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicShape.h; sourceTree = "<group>"; };
 		1470623E229E92D10004906E /* BasicShape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasicShape.cpp; sourceTree = "<group>"; };
 		14706244229E96370004906E /* Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		14CC7C5122B79FC000DE2B8F /* UserInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UserInterface.cpp; sourceTree = "<group>"; };
-		14CC7C5322B7B20900DE2B8F /* ShapeCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeCreator.h; sourceTree = "<group>"; };
-		14CC7C5422B7B25E00DE2B8F /* ShapeCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShapeCreator.cpp; sourceTree = "<group>"; };
 		14D96C1022A68EE0004AC914 /* Circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
 		14D96C1222A6E20D004AC914 /* UserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInterface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,10 +91,6 @@
 				14D96C1022A68EE0004AC914 /* Circle.cpp */,
 				14D96C1222A6E20D004AC914 /* UserInterface.h */,
 				14CC7C5122B79FC000DE2B8F /* UserInterface.cpp */,
-				14CC7C5322B7B20900DE2B8F /* ShapeCreator.h */,
-				14CC7C5422B7B25E00DE2B8F /* ShapeCreator.cpp */,
-				1465B3CD22BCEEB10090A084 /* XMLParser.h */,
-				1465B3CE22BCF1BD0090A084 /* XMLParser.cpp */,
 			);
 			path = SVG_Project;
 			sourceTree = "<group>";
@@ -165,8 +155,6 @@
 				142A2D1022A4042B005BA6B4 /* Line.cpp in Sources */,
 				14D96C1122A68EE0004AC914 /* Circle.cpp in Sources */,
 				1470623F229E92D10004906E /* BasicShape.cpp in Sources */,
-				1465B3CF22BCF1BD0090A084 /* XMLParser.cpp in Sources */,
-				14CC7C5522B7B25E00DE2B8F /* ShapeCreator.cpp in Sources */,
 				14706237229E92A90004906E /* main.cpp in Sources */,
 				142A2D1322A40C46005BA6B4 /* Rectangle.cpp in Sources */,
 			);

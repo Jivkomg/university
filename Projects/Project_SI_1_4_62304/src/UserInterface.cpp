@@ -10,8 +10,11 @@
 #include <fstream>
 #include <iostream>
 #include "rapidxml_utils.hpp"
-//#include "rapidxml_print.hpp"
+#include "rapidxml_print.hpp"
+#include "rapidxml.hpp"
+using namespace rapidxml;
 #include <string>
+
 
 int parseInt(const char* stringInt)
 {
@@ -24,6 +27,7 @@ int parseInt(const char* stringInt)
     }
     return number;
 }
+
 
 std::vector<std::string> split(const std::string& str,char delimiter)
 {
@@ -51,71 +55,106 @@ std::vector<std::string> split(const std::string& str,char delimiter)
 }
 
 void UserInterface::close() {
+	if (currentFile.compare("") == 0) {
+		std::cout << "There is no opened file!" << std::endl;
+		return;
+	}
     this->clear();
     std::cout << "Closed current file" << std::endl;
 }
 
 void UserInterface::save() {
-    if(currentFile == ""){
-        std::cout << "There is no opened file!" << std::endl;
-        return;
-    }
+   
     this->saveAs(currentFile);
 }
 
 void UserInterface::saveAs(const std::string& fileName) {
-    std::ofstream ofs(fileName);
-    if (!ofs)
-    {
-        std::cout << "Invalid file name" << std::endl;
-        return;
-    }
-//    std::string xmlText = "";
-//    while(ifs.peek() != EOF){
-//        std::string line;
-//        std::getline(ifs, line);
-//        xmlText += line;
-//    }
-//    rapidxml::xml_document<> doc;
-    
-//    ofs << doc;
-//    this->currentFile = fileName.c_str();
-//    rapidxml::file<> xmlFile("somefile.xml"); // Default template is char
-//    rapidxml::xml_document<> doc;
-//    doc.parse<0>(xmlFile.data());
-//    rapidxml::xml_node<>* node = doc.first_node();
-//
-    //remove all nodes
-    
-    //    while(node->next_sibling() != nullptr){
-    //        delete
-    //    }
-    //    strcpy(currentFile, fileName.c_str());
-    for(int i = 0; i < shapes.size(); i++){
-        //        add
-    }
-    
-    //    std::ofstream ofs;
-    //    char* fileNameCharArray = new char[fileName.length() + 1];
-    //    strcpy(fileNameCharArray, fileName.c_str());
-    //    ofs.open(fileNameCharArray, std::ofstream::out | std::ofstream::trunc);
-    //
-    //    if (!ofs.is_open())
-    //    {
-    //        std::cout << "Invalid input" << std::endl;
-    //        return;
-    //    }
-    //    ofs << header << openTag;
-    //
-    //    for (int i = 0; i < this->shapes.size(); i++)
-    //    {
-    //        this->shapes[i]->serialize(ofs);
-    //    }
-    //
-    //    ofs << closeTag;
-    //    ofs.close();
-    //    std::cout << "Successfully saved to " << fileNameCharArray << std::endl;
-    //    delete[] fileNameCharArray;
+	if (currentFile.compare("") == 0) {
+		std::cout << "There is no opened file!" << std::endl;
+		return;
+	}
+    std::ofstream ofs(fileName, std::ofstream::out | std::ofstream::trunc);
+	currentFile = fileName;
+
+	// xml declaration
+	rapidxml::xml_document<> doc;
+	rapidxml::xml_node<>* decl = doc.allocate_node(rapidxml::node_declaration);
+	decl->append_attribute(doc.allocate_attribute("version", "1.0"));
+	decl->append_attribute(doc.allocate_attribute("encoding", "no"));
+	doc.append_node(decl);
+	
+	// doctype declaration
+	rapidxml::xml_node<>* doctype = doc.allocate_node(rapidxml::node_doctype);
+	doctype->value("svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"");
+	doc.append_node(doctype);
+
+	// root declaration
+	rapidxml::xml_node<>* root = doc.allocate_node(rapidxml::node_element, "svg");
+	doc.append_node(root);
+
+	for (int i = 0; i < shapes.size(); i++) {
+		if (!strcmp(shapes[i]->getType().c_str(), "rectangle")) {
+			rapidxml::xml_node<>* child = doc.allocate_node(rapidxml::node_element, "rect");
+			Rectangle* rect = dynamic_cast<Rectangle*>(shapes[i]);
+			char* idxStr = doc.allocate_string(std::to_string(rect->getLeft().getX()).c_str());
+			child->append_attribute(doc.allocate_attribute("x", idxStr));
+		
+			idxStr = doc.allocate_string(std::to_string(rect->getLeft().getY()).c_str());
+			child->append_attribute(doc.allocate_attribute("y", idxStr));
+
+			idxStr = doc.allocate_string(std::to_string(rect->getWidth()).c_str());
+			child->append_attribute(doc.allocate_attribute("width", idxStr));
+
+			idxStr = doc.allocate_string(std::to_string(rect->getHeight()).c_str());
+			child->append_attribute(doc.allocate_attribute("height", idxStr));
+
+			idxStr = doc.allocate_string(rect->getFill().c_str());
+			child->append_attribute(doc.allocate_attribute("fill", idxStr));
+			root->append_node(child);
+		}
+		else if (!strcmp(shapes[i]->getType().c_str(), "circle")) {
+			rapidxml::xml_node<>* child = doc.allocate_node(rapidxml::node_element, "circle");
+			Circle* circle = dynamic_cast<Circle*>(shapes[i]);
+			
+			char* idxStr = doc.allocate_string(std::to_string(circle->getCentre().getX()).c_str());
+			child->append_attribute(doc.allocate_attribute("cx", idxStr));
+
+			idxStr = doc.allocate_string(std::to_string(circle->getCentre().getY()).c_str());
+			child->append_attribute(doc.allocate_attribute("cy", idxStr));
+
+			idxStr = doc.allocate_string(std::to_string(circle->getRadius()).c_str());
+			child->append_attribute(doc.allocate_attribute("r", idxStr));
+
+			idxStr = doc.allocate_string(circle->getFill().c_str());
+			child->append_attribute(doc.allocate_attribute("fill", idxStr));
+			root->append_node(child);
+		}
+		else if (!strcmp(shapes[i]->getType().c_str(), "line")) {
+			rapidxml::xml_node<>* child = doc.allocate_node(rapidxml::node_element, "line");
+			Line* line = dynamic_cast<Line*>(shapes[i]);
+
+			char* idxStr = doc.allocate_string(std::to_string(line->getPoint1().getX()).c_str());
+			child->append_attribute(doc.allocate_attribute("x1", idxStr));
+
+			idxStr = doc.allocate_string(std::to_string(line->getPoint1().getY()).c_str());
+			child->append_attribute(doc.allocate_attribute("y1", idxStr));
+
+			idxStr = doc.allocate_string(std::to_string(line->getPoint2().getX()).c_str());
+			child->append_attribute(doc.allocate_attribute("x2", idxStr));
+
+			idxStr = doc.allocate_string(std::to_string(line->getPoint2().getY()).c_str());
+			child->append_attribute(doc.allocate_attribute("y2", idxStr));
+
+			idxStr = doc.allocate_string(std::to_string(line->getStrokeWidth()).c_str());
+			child->append_attribute(doc.allocate_attribute("stroke-width", idxStr));
+			root->append_node(child);
+		}
+	}
+	//std::string xml_as_string;
+	//rapidxml::print(std::back_inserter(xml_as_string), doc);
+	ofs << doc;
+	ofs.close();
+	doc.clear();
 }
 
 void UserInterface::exit() {
@@ -128,8 +167,10 @@ void UserInterface::open(const std::string& fileName) {
     if (!ifs)
     {
         std::cout << "Invalid file name" << std::endl;
+		ifs.close();
         return;
     }
+
     std::string xmlText = "";
     while(ifs.peek() != EOF){
         std::string line;
@@ -185,8 +226,14 @@ void UserInterface::open(const std::string& fileName) {
         node = node->next_sibling();
     }
     while (node != nullptr);
+	currentFile = fileName;
+	ifs.close();
 }
 void UserInterface::clear() {
+	if (currentFile.compare("") == 0) {
+		std::cout << "There is no opened file!" << std::endl;
+		return;
+	}
     currentFile = "";
     for (int i = 0; i < this->shapes.size(); i++)
     {
@@ -209,86 +256,8 @@ void UserInterface::help() const {
     std::cout << "- exit\n";
 }
 
-void UserInterface::read(std::istream& is) {
-    //    std::ifstream inputFile(fileName, std::ios_base::binary);
-    //    if (inputFile.fail()) {
-    //        return false; // Failed to open file
-    //    }
-    //
-    //    if (inputFile.is_open()) {
-    //        char next;
-    //        while (inputFile.get(next)) {
-    //            input.push_back(next);
-    //        }
-    //    }
-    //    inputFile.close();
-    //    return true; // Successfully read file
-    //}
-    //    if(is.good()){
-    ////        ShapeCreator creator;
-    //
-    ////       get the next tag might do additional method
-    //        char c;
-    //        std::string s = "";
-    //        do
-    //        {
-    //            c = is.get();
-    //
-    //        } while (c != '<' && c > 0);
-    //
-    //        c = is.get();
-    //        while (c != ' ' && c != '>')
-    //        {
-    //            s += c;
-    //            c = is.get();
-    //        }
-    //
-    //        std::string tagName = s;
-    //        while (tagName != "/svg")
-    //        {
-    //            BasicShape* shape;
-    //            if(tagName == "rectangle"){
-    //                shape = new Rectangle();
-    //            }
-    //            else if(tagName == "line"){
-    //                shape = new Line();
-    //            }
-    //            else if(tagName == "circle"){
-    //                shape = new Circle();
-    //            }
-    //            else {
-    //                shape = nullptr;
-    //            }
-    //
-    ////            BasicShape* shape = creator.createShape(tagName);
-    //            if (shape != nullptr)
-    //            {
-    //                shape->deserialize(is);
-    //                this->shapes.push_back(shape);
-    //            }
-    //            //       get the next tag
-    //
-    //            std::string s = "";
-    //            do
-    //            {
-    //                c = is.get();
-    //
-    //            } while (c != '<' && c > 0);
-    //
-    //            c = is.get();
-    //            while (c != ' ' && c != '>')
-    //            {
-    //                s += c;
-    //                c = is.get();
-    //            }
-    //            tagName = s;
-    //        }
-    //    }
-    //    std::cout << "Invalid stream!" << std::endl;
-}
-
-
 bool UserInterface::containedInRectangle(const Rectangle& rect, const BasicShape* shape){
+
     if((rect.getLeft().x <= shape->getLeft().x) && (rect.getLeft().y <= shape->getLeft().y) &&
        ((rect.getLeft().x <= shape->getBottom().x) && rect.getLeft().y <= shape->getBottom().y) &&
        ((rect.getRight().x >= shape->getRight().x) && rect.getRight().y >= shape->getRight().y) &&
@@ -348,6 +317,10 @@ Circle* UserInterface::createCircle(const std::vector<std::string>& params) {
 
 
 void UserInterface::print() const{
+	if (currentFile.compare("") == 0) {
+		std::cout << "There is no opened file!" << std::endl;
+		return;
+	}
     for(int i = 0; i < shapes.size(); i++){
         std::cout << i + 1 << ". ";
         shapes[i]->print();
@@ -357,6 +330,10 @@ void UserInterface::print() const{
 
 
 void UserInterface::create(const std::vector<std::string>& params) {
+	if (currentFile.compare("") == 0) {
+		std::cout << "There is no opened file!" << std::endl;
+		return;
+	}
     BasicShape* newShape;
     if(!params[1].compare("rectangle")){
         if (params.size() < 6)
@@ -393,6 +370,10 @@ void UserInterface::create(const std::vector<std::string>& params) {
 }
 
 void UserInterface::erase(const int& index) {
+	if (currentFile.compare("") == 0) {
+		std::cout << "There is no opened file!" << std::endl;
+		return;
+	}
     if(index > shapes.size()){
         std::cout << "There is no figure number "<< index << "!" << std::endl;
         return;
@@ -404,6 +385,10 @@ void UserInterface::erase(const int& index) {
 }
 
 void UserInterface::within(const std::vector<std::string>& params) {
+	if (currentFile.compare("") == 0) {
+		std::cout << "There is no opened file!" << std::endl;
+		return;
+	}
     std::vector<int> shapesWithinIndexes;
     if(params.size() == 5 || params.size() == 6){
         if(!params[1].compare("rectangle")){
@@ -440,6 +425,10 @@ void UserInterface::within(const std::vector<std::string>& params) {
 }
 
 void UserInterface::translate(const std::vector<std::string>& params) {
+	if (currentFile.compare("") == 0) {
+		std::cout << "There is no opened file!" << std::endl;
+		return;
+	}
     if(params.size() >= 3){
         int dy = std::atoi(split(params[1], '=')[1].c_str());
         int dx = std::atoi(split(params[2], '=')[1].c_str());

@@ -17,7 +17,6 @@ private:
     std::string currentFile;
     std::vector<BasicShape*> shapes;
     
-    
     void close();
     void save();
     void saveAs(const std::string&);
@@ -25,7 +24,6 @@ private:
     void open(const std::string&);
     void clear();
     void help() const;
-    void read(std::istream&);
 
     bool containedInRectangle(const Rectangle&, const BasicShape*);
     bool containedInCircle(const Circle&, const BasicShape*);
