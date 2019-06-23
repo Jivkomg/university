@@ -7,11 +7,19 @@
 //
 
 #include <iostream>
-#include <sstream>
-//#include "UserInterface.h"
+//#include <sstream>
+//#include <vector>
+//#include <string>
+#include <fstream>
+#include "UserInterface.h"
+
 int main() {
+//    UserInterface ui;
+//    ui.executeProgram();
+    std::ofstream ofs("test.txt");
     
-
-
+    ofs << "bla";
+    ofs.close();
+    
     return 0;
 }

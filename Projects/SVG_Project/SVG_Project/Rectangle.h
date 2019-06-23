@@ -28,8 +28,8 @@ public:
     const int getWidth() const;
     const int getHeight() const;
     
-    void deserializeWithParameters(const std::string&, const std::string&) override;
-    void serialize(std::ostream&) const override;
+//    void deserializeWithParameters(const std::string&, const std::string&) override;
+//    void serialize(std::ostream&) const override;
     const std::string getType() const override;
     
     void print() const override;

@@ -25,8 +25,8 @@ public:
     void setCentre(const Point&);
     void setRadius(const int&);
     
-    void deserializeWithParameters(const std::string&, const std::string&) override;
-    void serialize(std::ostream&) const override;
+//    void deserializeWithParameters(const std::string&, const std::string&) override;
+//    void serialize(std::ostream&) const override;
 
     const std::string getType() const override;
     void print() const override;

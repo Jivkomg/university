@@ -41,38 +41,38 @@ const int Rectangle::getWidth() const {
 const int Rectangle::getHeight() const {
     return height;
 }
-void Rectangle::deserializeWithParameters(const std::string& name, const std::string& value) {
-    if (name == "x")
-    {
-        leftMostPoint.x = std::atoi(value.c_str());
-    }
-    else if (name == "y")
-    {
-        leftMostPoint.y = std::atoi(value.c_str());
-    }
-    else if (name == "width")
-    {
-        width = std::atoi(value.c_str());
-    }
-    else if (name == "height")
-    {
-        height = std::atoi(value.c_str());
-    }
-    else if (name == "fill")
-    {
-        
-       this->setFill(value);
-    }
-}
-void Rectangle::serialize(std::ostream& os) const {
-    this->startSerialize(os);
-    this->serializeWithParameters(os, "x", std::to_string(leftMostPoint.x));
-    this->serializeWithParameters(os, "y", std::to_string(leftMostPoint.y));
-    this->serializeWithParameters(os, "width", std::to_string(width));
-    this->serializeWithParameters(os, "height", std::to_string(height));
-    this->serializeWithParameters(os, "fill", this->getFill());
-    this->endSerialize(os);
-}
+//void Rectangle::deserializeWithParameters(const std::string& name, const std::string& value) {
+//    if (name == "x")
+//    {
+//        leftMostPoint.x = std::atoi(value.c_str());
+//    }
+//    else if (name == "y")
+//    {
+//        leftMostPoint.y = std::atoi(value.c_str());
+//    }
+//    else if (name == "width")
+//    {
+//        width = std::atoi(value.c_str());
+//    }
+//    else if (name == "height")
+//    {
+//        height = std::atoi(value.c_str());
+//    }
+//    else if (name == "fill")
+//    {
+//        
+//       this->setFill(value);
+//    }
+//}
+//void Rectangle::serialize(std::ostream& os) const {
+//    this->startSerialize(os);
+//    this->serializeWithParameters(os, "x", std::to_string(leftMostPoint.x));
+//    this->serializeWithParameters(os, "y", std::to_string(leftMostPoint.y));
+//    this->serializeWithParameters(os, "width", std::to_string(width));
+//    this->serializeWithParameters(os, "height", std::to_string(height));
+//    this->serializeWithParameters(os, "fill", this->getFill());
+//    this->endSerialize(os);
+//}
 
 
 const std::string Rectangle::getType() const { 

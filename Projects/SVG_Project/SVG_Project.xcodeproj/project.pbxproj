@@ -30,6 +30,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		141D4B9522BEE2BA00EBDC67 /* rapidxml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = rapidxml.hpp; path = "../../../../../Downloads/rapidxml-1.13/rapidxml.hpp"; sourceTree = "<group>"; };
+		141D4B9622BEE2BA00EBDC67 /* rapidxml_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = rapidxml_utils.hpp; path = "../../../../../Downloads/rapidxml-1.13/rapidxml_utils.hpp"; sourceTree = "<group>"; };
+		141D4B9722BEE2BA00EBDC67 /* rapidxml_iterators.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = rapidxml_iterators.hpp; path = "../../../../../Downloads/rapidxml-1.13/rapidxml_iterators.hpp"; sourceTree = "<group>"; };
+		141D4B9822BEE2BA00EBDC67 /* rapidxml_print.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = rapidxml_print.hpp; path = "../../../../../Downloads/rapidxml-1.13/rapidxml_print.hpp"; sourceTree = "<group>"; };
 		142A2D0F22A4042B005BA6B4 /* Line.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
 		142A2D1122A408DB005BA6B4 /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
 		142A2D1222A40C46005BA6B4 /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
@@ -78,6 +82,10 @@
 		14706235229E92A90004906E /* SVG_Project */ = {
 			isa = PBXGroup;
 			children = (
+				141D4B9722BEE2BA00EBDC67 /* rapidxml_iterators.hpp */,
+				141D4B9822BEE2BA00EBDC67 /* rapidxml_print.hpp */,
+				141D4B9622BEE2BA00EBDC67 /* rapidxml_utils.hpp */,
+				141D4B9522BEE2BA00EBDC67 /* rapidxml.hpp */,
 				14706236229E92A90004906E /* main.cpp */,
 				1470623D229E92C20004906E /* BasicShape.h */,
 				1470623E229E92D10004906E /* BasicShape.cpp */,

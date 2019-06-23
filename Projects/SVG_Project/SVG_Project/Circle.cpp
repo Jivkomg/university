@@ -32,33 +32,33 @@ void Circle::setRadius(const int& radius) {
     this->radius = radius;
 }
 
-void Circle::deserializeWithParameters(const std::string& name, const std::string& value) {
-    if (name == "x")
-    {
-        centre.x = std::atoi(value.c_str());
-    }
-    else if (name == "y")
-    {
-        centre.y = std::atoi(value.c_str());
-    }
-    else if (name == "r")
-    {
-        radius = std::atoi(value.c_str());
-    }
-    else if (name == "fill")
-    {
-        
-        this->setFill(value);
-    }
-}
-void Circle::serialize(std::ostream& os) const {
-    this->startSerialize(os);
-    this->serializeWithParameters(os, "cx", std::to_string(centre.x));
-    this->serializeWithParameters(os, "cy", std::to_string(centre.y));
-    this->serializeWithParameters(os, "r", std::to_string(radius));
-    this->serializeWithParameters(os, "fill", this->getFill());
-    this->endSerialize(os);
-}
+//void Circle::deserializeWithParameters(const std::string& name, const std::string& value) {
+//    if (name == "x")
+//    {
+//        centre.x = std::atoi(value.c_str());
+//    }
+//    else if (name == "y")
+//    {
+//        centre.y = std::atoi(value.c_str());
+//    }
+//    else if (name == "r")
+//    {
+//        radius = std::atoi(value.c_str());
+//    }
+//    else if (name == "fill")
+//    {
+//        
+//        this->setFill(value);
+//    }
+//}
+//void Circle::serialize(std::ostream& os) const {
+//    this->startSerialize(os);
+//    this->serializeWithParameters(os, "cx", std::to_string(centre.x));
+//    this->serializeWithParameters(os, "cy", std::to_string(centre.y));
+//    this->serializeWithParameters(os, "r", std::to_string(radius));
+//    this->serializeWithParameters(os, "fill", this->getFill());
+//    this->endSerialize(os);
+//}
 
 
 
