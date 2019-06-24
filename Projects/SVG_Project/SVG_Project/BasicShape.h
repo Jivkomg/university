@@ -20,6 +20,12 @@ struct Point{
         this->x = x;
         this->y = y;
     }
+	int getX() const{
+		return x;
+	}
+	int getY() const {
+		return y;
+	}
     double getDistanceToPoint(const Point& p) const{
         int dx = this->x - p.x;
         int dy = this->y - p.y;
